@@ -1,0 +1,65 @@
+/*
+
+-----------------------
+---- Tailwind CSS ---- |
+-----------------------
+
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+
+-----------------
+---- Layers ---- |
+-----------------
+
+*/
+
+@layer base {
+    /*
+    ----------------------------------------
+    | ---- Remove the blue color when ---- | 
+    | ---- an user touch on a button ----- |
+    | ---- in Chrome mobile -------------- |
+    ----------------------------------------
+    */
+    body {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+@layer utilities {
+    /*
+    -----------------------------------------
+    | ---- Handle the bottom bar newer ---- | 
+    | ---- iPhones without the “Home” ----- |
+    | ---- button ------------------------- |
+    -----------------------------------------
+    */
+    .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    /*
+    ------------------------------------------
+    | ---- Create an utility class that ---- | 
+    | ---- add an dot in the lists --------- |
+    ------------------------------------------
+    */
+    .list-interpunct > li:before {
+        content: '・';
+        float: left;
+        margin: 0 0 0 -0.8em;
+        width: 0.8em;
+    }
+
+    @media (min-width: 992px) {
+        .list-interpunct > li:before {
+            margin: 0 0 0 -1.4em;
+            width: 1.4em;
+        }
+    }
+}
