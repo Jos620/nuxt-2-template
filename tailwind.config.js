@@ -16,6 +16,7 @@ module.exports = {
             colors: {
                 github   : '#232323'  ,
                 linkedin : '#0a66c2'  ,
+                codepen  : '#1e1f26'  ,
                 cyan     : colors.cyan,
             },
 
